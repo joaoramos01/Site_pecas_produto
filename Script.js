@@ -20,7 +20,9 @@ const defaultCars = [
 
 const defaultCleaning = [
     { id: 201, name: "Cera Líquida Blend Spray", image: "https://www.vonixx.com.br/wp-content/uploads/2023/07/blend_spray-removebg-preview.png", storeName: "Loja Oficial da Vonixx", storeLink: "https://www.vonixx.com.br/produto/blend-spray-wax/" },
-    { id: 202, name: "Cera Carnaúba Purificada", image: "https://images.unsplash.com/photo-1607860108855-64c2079ed3f3?auto=format&fit=crop&w=600&q=80", storeName: "Mercado Livre", storeLink: "https://mercadolivre.com.br" }
+    { id: 202, name: "Cera Carnaúba Purificada", image: "https://images.unsplash.com/photo-1607860108855-64c2079ed3f3?auto=format&fit=crop&w=600&q=80", storeName: "Mercado Livre", storeLink: "https://mercadolivre.com.br" },
+    { id: 202, name: "Teste Cera", image: "https://images.unsplash.com/photo-1607860108855-64c2079ed3f3?auto=format&fit=crop&w=600&q=80", storeName: "Mercado Livre", storeLink: "https://mercadolivre.com.br" }
+
 ];
 
 // Carregar dados do localStorage ou usar padrão
