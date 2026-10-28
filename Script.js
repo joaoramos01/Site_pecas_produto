@@ -20,8 +20,8 @@ const defaultCars = [
 
 const defaultCleaning = [
     { id: 201, name: "Cera Líquida Blend Spray", image: "https://www.vonixx.com.br/wp-content/uploads/2023/07/blend_spray-removebg-preview.png", storeName: "Loja Oficial da Vonixx", storeLink: "https://www.vonixx.com.br/produto/blend-spray-wax/" },
-    { id: 202, name: "Cera Carnaúba Purificada", image: "https://images.unsplash.com/photo-1607860108855-64c2079ed3f3?auto=format&fit=crop&w=600&q=80", storeName: "Mercado Livre", storeLink: "https://mercadolivre.com.br" },
-    { id: 202, name: "Teste Cera", image: "https://images.unsplash.com/photo-1607860108855-64c2079ed3f3?auto=format&fit=crop&w=600&q=80", storeName: "Mercado Livre", storeLink: "https://mercadolivre.com.br" }
+    { id: 202, name: "Restaurax Vonixx Restaurador de Plástico", image: "https://http2.mlstatic.com/D_NQ_NP_2X_955536-MLA99439300758_112025-F.webp", storeName: "Mercado Livre", storeLink: "https://www.mercadolivre.com.br/vonixx-automotivo-restaurador-de-plasticos-500ml-abrilhantador-brilhante/p/MLB54009180?pdp_filters=item_id%3AMLB5651930242&from=gshop&matt_tool=99302748&matt_word=&matt_source=google&matt_campaign_id=22090193915&matt_ad_group_id=174661991404&matt_match_type=&matt_network=g&matt_device=c&matt_creative=727914181654&matt_keyword=&matt_ad_position=&matt_ad_type=pla_with_promotion&matt_merchant_id=735128188&matt_product_id=MLB54009180-product&matt_product_partition_id=2496596680011&matt_target_id=pla-2496596680011&cq_src=google_ads&cq_cmp=22090193915&cq_net=g&cq_plt=gp&cq_med=pla_with_promotion&gad_source=1&gad_campaignid=22090193915&gbraid=0AAAAAD93qcDSGlawfmITdbZJEqAIVrpHa&gclid=CjwKCAjwxeHWBhBPEiwAiqtQ-c62Bm65iYxFgD-E3Ykpon0yABymmOcvvhRMqu5eO8KCU6tLETei-BoCxasQAvD_BwE", notes:"" },
+    { id: 202, name: "Sintra Vonixx ", image: "https://www.vonixx.com.br/wp-content/uploads/2023/07/sintra-fast.png", storeName: "Mercado Livre", storeLink: "https://mercadolivre.com.br",notes: "O Sintra Fast da Vonixx remove sujeiras, manchas e odores do interior do carro de forma rápida e prática, deixando o ambiente limpo, agradável e com aroma fresco." }
 
 ];
 
@@ -167,7 +167,7 @@ function renderCleaningProducts() {
         card.innerHTML = `
             <div>
                 <div class="h-40 rounded-xl overflow-hidden mb-3 bg-slate-950">
-                    <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                    <img src="${item.image}" alt="${item.name}" class="w-full h-full object-contain bg-slate-950">
                 </div>
                 <h4 class="font-bold text-white text-base mb-1">${item.name}</h4>
                 ${item.notes ? `<p class="text-xs text-slate-400 mb-3">${item.notes}</p>` : ''} <!-- <- Linha adicionada para exibir a observação -->
@@ -203,7 +203,7 @@ function closePasswordModal() {
 function verifyPassword() {
     const pass = document.getElementById("admin-password-input").value;
     if(pass === "admin123") {
-        isAdmin = true;
+        isAdmin = true; //Senha padrão para entrar//
         closePasswordModal();
         updateAdminUI();
     } else {
