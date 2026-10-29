@@ -3,18 +3,69 @@ let isAdmin = false;
 let selectedCarId = null;
 
 // Dados mockados iniciais caso o LocalStorage esteja vazio
+
 const defaultCars = [
     {
         id: 1,
         name: "Lancer HL-T",
-        image:"https://instagram.ffln1-1.fna.fbcdn.net/v/t51.82787-15/861668574_18094364705692277_6585833048402907769_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ig_cache_key=NDAxMjM3MjY3MTk2MTg2NTk2MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzAyNC5oZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=eE2C_Ltus5MQ7kNvwGZNUVd&_nc_oc=AdowF-6B1yweubf1gtr9XCsGbZ8xbhG-fHFJ1dEPaUCaD4sJpFE_PLVLiqmF6ekaUQ-8LrTkHlJgbjhPh_9iEdYW&_nc_zt=23&_nc_ht=instagram.ffln1-1.fna&_nc_gid=V6poPB2wA78H03PvZl_lTg&_nc_ss=7b6a8&oh=00_AQPtPUdTCkBKsxGYiHhA-9vujnEUn16ryEiWVnrMACazDg&oe=6ADF3F5E",
-        year: "2019 2.0 / 4B11",
+        image: "https://instagram.ffln1-1.fna.fbcdn.net/v/t51.82787-15/861668574_18094364705692277_6585833048402907769_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ig_cache_key=NDAxMjM3MjY3MTk2MTg2NTk2MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzAyNC5oZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=eE2C_Ltus5MQ7kNvwGZNUVd&_nc_oc=AdowF-6B1yweubf1gtr9XCsGbZ8xbhG-fHFJ1dEPaUCaD4sJpFE_PLVLiqmF6ekaUQ-8LrTkHlJgbjhPh_9iEdYW&_nc_zt=23&_nc_ht=instagram.ffln1-1.fna&_nc_gid=V6poPB2wA78H03PvZl_lTg&_nc_ss=7b6a8&oh=00_AQPtPUdTCkBKsxGYiHhA-9vujnEUn16ryEiWVnrMACazDg&oe=6ADF3F5E",
+        year: "2019 2.0 / Motor 4B11",
         parts: [
-            { id: 101, name: "Aerofolio Modelo Abs Lancer Evolution", image: "https://http2.mlstatic.com/D_NQ_NP_2X_835008-MLB90116600571_082025-F-aerofolio-modelo-plastico-abs-lancer-evo-evolution-2012-2013.webp", storeName: "Mercado Livre", storeLink: "https://produto.mercadolivre.com.br/MLB-4034198895-aerofolio-modelo-plastico-abs-lancer-evo-evolution-2012-2013-_JM?sid=purchases", notes: "Produto entregue em perfeitas condições. Furações exatas e material de ótima qualidade." },
-            { id: 102, name: "Escapamento Luzian", image: "https://api.luzianperformanceparts.com/uploads/EUTQUsqpGbbt9wSeRzvdN.png?v=105", storeName: "Luzian Performace Partis", storeLink: "https://luzian.com.br/produto/la06", notes: "Excelente produto! Ronco perfeito, acabamento impecável e o atenuador removível funciona muito bem para reduzir o barulho." },
-            { id: 102, name: "Luzes Traseiras De Freio Lancer", image: "https://down-br.img.susercontent.com/file/sg-11134201-7rbki-lno3v19urhf9af@resize_w900_nl.webp", storeName: "Shopee", storeLink: "https://shopee.com.br/Luzes-Traseiras-De-Freio-De-12V-Para-Mitsubishi-Lancer-Evolution-X-Outlander-Refletor-De-Cauda-i.1269119992.26254074717", notes: "Luz de freio em perfeito estado, fácil de instalar e combinou muito, ainda mais por ser sequencial." },
-            { id: 102, name: "Adesivo Kit Mitsubishi Lancer Vermelho Refletivo", image: "https://down-br.img.susercontent.com/file/sg-11134201-7rd47-luqu25pab2me05@resize_w900_nl.webp", storeName: "Shopee", storeLink: "https://shopee.com.br/Adesivo-Kit-Mitsubishi-Lancer-Vermelho-Refletivo-7-Pe%C3%A7as-i.1213049832.22992984343", notes: "Adesivos de ótima qualidade e acabamento." }
+            {
+                id: 101,
+                name: "Aerofolio Modelo ABS Lancer Evolution",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_835008-MLB90116600571_082025-F-aerofolio-modelo-plastico-abs-lancer-evo-evolution-2012-2013.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://produto.mercadolivre.com.br/MLB-4034198895-aerofolio-modelo-plastico-abs-lancer-evo-evolution-2012-2013-_JM?sid=purchases",
+                notes: "Produto entregue em perfeitas condições. Furações exatas e material de ótima qualidade."
+            },
+            {
+                id: 102,
+                name: "Escapamento Luzian",
+                image: "https://api.luzianperformanceparts.com/uploads/EUTQUsqpGbbt9wSeRzvdN.png?v=105",
+                storeName: "Luzian Performance Parts",
+                storeLink: "https://luzian.com.br/produto/la06",
+                notes: "Excelente produto! Ronco perfeito, acabamento impecável e atenuador removível."
+            },
+            {
+                id: 103,
+                name: "Luzes Traseiras de Freio Lancer",
+                image: "https://down-br.img.susercontent.com/file/sg-11134201-7rbki-lno3v19urhf9af@resize_w900_nl.webp",
+                storeName: "Shopee",
+                storeLink: "https://shopee.com.br/Luzes-Traseiras-De-Freio-De-12V-Para-Mitsubishi-Lancer-Evolution-X-Outlander-Refletor-De-Cauda-i.1269119992.26254074717",
+                notes: "Luzes de freio sequenciais, fáceis de instalar e que combinam com o carro."
+            },
+            {
+                id: 104,
+                name: "Adesivo Kit Mitsubishi Lancer Vermelho Refletivo",
+                image: "https://down-br.img.susercontent.com/file/sg-11134201-7rd47-luqu25pab2me05@resize_w900_nl.webp",
+                storeName: "Shopee",
+                storeLink: "https://shopee.com.br/Adesivo-Kit-Mitsubishi-Lancer-Vermelho-Refletivo-7-Pe%C3%A7as-i.1213049832.22992984343",
+                notes: "Adesivos de ótima qualidade e acabamento."
+            },
+            {
+                id: 105,
+                name: "Iluminação Interior Neon RGB 12 LEDs",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_947793-MLB96997748954_112025-F-iluminacao-interior-neon-carro-12-led-rgb-controle-12v-ritmo.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://www.mercadolivre.com.br/iluminacao-interior-neon-carro-12-led-rgb-controle-12v-ritmo/up/MLBU776287868?pdp_filters=item_id:MLB3825177527&sid=purchases",
+                notes: "Iluminação interna RGB que deixa o carro mais estiloso e melhora a visibilidade no interior à noite."
+            }
         ]
+    },
+    {
+        id: 2,
+        name: "Versa Executive",
+        image: "https://placehold.co/800x500?text=Peugeot+308",
+        year: "2022 / 1.6 16V Flex (HR16DE)",
+        parts: [            {
+                id: 101,
+                name: "Iluminação Interior Neon RGB 12 LEDs",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_947793-MLB96997748954_112025-F-iluminacao-interior-neon-carro-12-led-rgb-controle-12v-ritmo.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://www.mercadolivre.com.br/iluminacao-interior-neon-carro-12-led-rgb-controle-12v-ritmo/up/MLBU776287868?pdp_filters=item_id:MLB3825177527&sid=purchases",
+                notes: "Iluminação interna RGB que deixa o carro mais estiloso e melhora a visibilidade no interior à noite."
+            }]
     }
 ];
 
@@ -37,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCleaningProducts();
     if(carsData.length > 0) {
         //selectCar(carsData[0].id);
-    }
+    }   
 });
 
 // Alternar Abas
