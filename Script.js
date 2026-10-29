@@ -65,7 +65,40 @@ const defaultCars = [
                 storeName: "Mercado Livre",
                 storeLink: "https://www.mercadolivre.com.br/iluminacao-interior-neon-carro-12-led-rgb-controle-12v-ritmo/up/MLBU776287868?pdp_filters=item_id:MLB3825177527&sid=purchases",
                 notes: "Iluminação interna RGB que deixa o carro mais estiloso e melhora a visibilidade no interior à noite."
-            }]
+            },           
+            {
+                id: 102,
+                name: "Friso Lateral Versa Black Piano Slim",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_742630-MLB69513759871_052023-F-friso-lateral-versa-2019-2020-2021-2022-black-piano-slim.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://www.mercadolivre.com.br/friso-lateral-versa-2019-2020-2021-2022-black-piano-slim/up/MLBU605505030?pdp_filters=item_id:MLB3322354015&sid=purchases",
+                notes: "Excelente produto! Ficou parecendo que já veio de fábrica com o carro."
+            },
+                        {
+                id: 103,
+                name: "Soleira 8 Peças Nissan Versa 2021 Cor AÇO ESCOVADO",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_908280-MLA109214470318_042026-F.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://www.mercadolivre.com.br/soleira-8-pecas-nissan-versa-2021-cor-aco-escovado/p/MLB24025415?pdp_filters=item_id:MLB3736760910&sid=purchases",
+                notes: "Soleiras de excelente qualidade e fáceis de instalar."
+            },
+            {
+                id: 104,
+                name: "Aerofólio Preto Versa",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_956834-MLB110230804781_042026-F-aerofolio-preto-versa-2021-2022-2023-2024-2025-2026.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://www.mercadolivre.com.br/aerofolio-preto-versa-2021-2022-2023-2024-2025-2026/up/MLBU3886260615#polycard_client=search-desktop&be_origin=mixed&overlay_label=not_apply&search_layout=grid&position=3&type=product&tracking_id=af70e814-291c-4bb1-8dbb-6c5379176f22&overlay_label_capability=not_apply&wid=MLB6594533222&sid=search",
+                notes: "Aerofólio em perfeito estado, sem avarias e fácil de instalar."
+            },
+            {
+                id: 105,
+                name: "Calha De Chuva Novo Nissan Versa",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_992428-MLB71287127162_082023-F-calha-de-chuva-novo-nissan-versa-2021-2024-tgpoli--inteirica.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://www.mercadolivre.com.br/calha-de-chuva-novo-nissan-versa-2021-2024-tgpoli--inteirica/up/MLBU796756227?pdp_filters=item_id:MLB3423948667&sid=purchases",
+                notes: "Encaixou perfeitamente, o material é de boa qualidade e é ótimo para os dias de chuva, ajudando a evitar que os vidros embacem."
+            }
+        ]
     }
 ];
 
