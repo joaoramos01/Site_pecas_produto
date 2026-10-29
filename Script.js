@@ -99,12 +99,12 @@ function switchTab(tab) {
     const secCleaning = document.getElementById("section-cleaning");
 
     if(tab === 'cars') {
-        tabCars.className = "px-4 py-2 rounded-lg text-sm font-medium transition bg-cyan-500 text-slate-950";
+        tabCars.className = "px-4 py-2 rounded-lg text-sm font-medium transition bg-red-500 text-slate-950";
         tabCleaning.className = "px-4 py-2 rounded-lg text-sm font-medium transition text-slate-400 hover:text-white";
         secCars.classList.remove("hidden");
         secCleaning.classList.add("hidden");
     } else {
-        tabCleaning.className = "px-4 py-2 rounded-lg text-sm font-medium transition bg-cyan-500 text-slate-950";
+        tabCleaning.className = "px-4 py-2 rounded-lg text-sm font-medium transition bg-red-500 text-slate-950";
         tabCars.className = "px-4 py-2 rounded-lg text-sm font-medium transition text-slate-400 hover:text-white";
         secCleaning.classList.remove("hidden");
         secCars.classList.add("hidden");
