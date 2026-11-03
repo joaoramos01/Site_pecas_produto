@@ -217,9 +217,9 @@ function renderParts(parts) {
         card.className = "bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-4 flex flex-col justify-between shadow-md";
         card.innerHTML = `
             <div>
-                <div class="h-48 rounded-xl overflow-hidden mb-3 bg-slate-950">
-                    <img src="${part.image}" alt="${part.name}" class="w-full h-full object-cover">
-                </div>
+               <div class="h-40 rounded-xl overflow-hidden mb-3 bg-white">
+                 <img src="${part.image}" alt="${part.name}" class="w-full h-full object-contain">
+                  </div>
                 <h4 class="font-bold text-white text-base mb-1">${part.name}</h4>
                 ${part.notes ? `<p class="text-xs text-slate-400 mb-3">${part.notes}</p>` : ''}
             </div>
