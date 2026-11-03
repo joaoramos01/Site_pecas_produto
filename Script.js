@@ -56,7 +56,7 @@ const defaultCars = [
     {
         id: 2,
         name: "Versa Executive",
-        image: "https://placehold.co/800x500?text=Peugeot+308",
+        image: "https://www.webmotors.com.br/imagens/prod/348528/NISSAN_VERSA_1.6_16V_FLEX_SENSE_XTRONIC_34852810460372372.webp",
         year: "2022 / 1.6 16V Flex (HR16DE)",
         parts: [            {
                 id: 101,
