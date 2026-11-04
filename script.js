@@ -35,8 +35,16 @@ const defaultCars = [
                 storeLink: "https://shopee.com.br/Luzes-Traseiras-De-Freio-De-12V-Para-Mitsubishi-Lancer-Evolution-X-Outlander-Refletor-De-Cauda-i.1269119992.26254074717",
                 notes: "Luzes de freio sequenciais, fáceis de instalar e que combinam com o carro."
             },
-            {
+                        {
                 id: 104,
+                name: "Par de Side Fender Mitsubishi Lancer",
+                image: "https://acdn-us.mitiendanube.com/stores/006/912/197/products/chatgpt-image-1-de-jun-de-2026-11_42_35-60e84fc3d8aa17422b17803250000694-1024-1024.webp",
+                storeName: "Lancer Parts",
+                storeLink: "https://lancerparts.com.br/produtos/par-de-side-fender-mitsubishi-lancer/",
+                notes: "Produto impecável, com ótimo acabamento e fácil de instalar."
+            },
+            {
+                id: 105,
                 name: "Adesivo Kit Mitsubishi Lancer Vermelho Refletivo",
                 image: "https://down-br.img.susercontent.com/file/sg-11134201-7rd47-luqu25pab2me05@resize_w900_nl.webp",
                 storeName: "Shopee",
@@ -44,7 +52,7 @@ const defaultCars = [
                 notes: "Adesivos de ótima qualidade e acabamento."
             },
             {
-                id: 105,
+                id: 106,
                 name: "Iluminação Interior Neon RGB 12 LEDs",
                 image: "https://http2.mlstatic.com/D_NQ_NP_2X_947793-MLB96997748954_112025-F-iluminacao-interior-neon-carro-12-led-rgb-controle-12v-ritmo.webp",
                 storeName: "Mercado Livre",
