@@ -2,13 +2,11 @@
 let isAdmin = false;
 let selectedCarId = null;
 
-// Dados mockados iniciais caso o LocalStorage esteja vazio
-
 const defaultCars = [
     {
         id: 1,
         name: "Lancer HL-T",
-        image: "img/868024647_1756648128963603_8772046065326052413_n.jpg",
+        image: "https://s2-autoesporte.glbimg.com/dtyZfFVYzvNjHzaWSBfJHwIUnfU=/0x0:620x400/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/Y/X/SddH1hSrCrViJMPAjRrw/2015-01-02-mitsu-10-940x532.jpg",
         year: "2019 2.0 / Motor 4B11",
         parts: [
             {
@@ -43,8 +41,16 @@ const defaultCars = [
                 storeLink: "https://lancerparts.com.br/produtos/par-de-side-fender-mitsubishi-lancer/",
                 notes: "Produto impecável, com ótimo acabamento e fácil de instalar."
             },
-            {
+                        {
                 id: 105,
+                name: "Kit Spoiler Saia Lateral Lancer Abs",
+                image: "https://http2.mlstatic.com/D_NQ_NP_2X_632635-MLB89464111917_082025-F-kit-spoiler-saia-lateral-lancer-gt-2012-a-2018-soleira-abs.webp",
+                storeName: "Mercado Livre",
+                storeLink: "https://www.mercadolivre.com.br/kit-spoiler-saia-lateral-lancer-gt-2012-a-2018-soleira-abs/up/MLBU3346044838?pdp_filters=item_id:MLB4148876421&sid=purchases",
+                notes: "As saias laterais chegaram muito bem embaladas. O material é resistente, de ótima qualidade e não apresenta nenhum detalhe ou defeito."
+            },
+            {
+                id: 106,
                 name: "Adesivo Kit Mitsubishi Lancer Vermelho Refletivo",
                 image: "https://down-br.img.susercontent.com/file/sg-11134201-7rd47-luqu25pab2me05@resize_w900_nl.webp",
                 storeName: "Shopee",
@@ -52,7 +58,7 @@ const defaultCars = [
                 notes: "Adesivos de ótima qualidade e acabamento."
             },
             {
-                id: 106,
+                id: 107,
                 name: "Iluminação Interior Neon RGB 12 LEDs",
                 image: "https://http2.mlstatic.com/D_NQ_NP_2X_947793-MLB96997748954_112025-F-iluminacao-interior-neon-carro-12-led-rgb-controle-12v-ritmo.webp",
                 storeName: "Mercado Livre",
