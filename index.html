@@ -37,11 +37,11 @@
             </div>
 
             <!-- Botão Admin -->
-            <div>
-                <button id="admin-toggle-btn" onclick="toggleAdminModal()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-2 rounded-lg border border-slate-700 transition flex items-center gap-2">
-                    <i class="fa-solid fa-lock" id="admin-icon"></i> <span id="admin-btn-text">Área Admin</span>
-                </button>
-            </div>
+           <div class="relative group py-2 px-3">
+            <button id="admin-toggle-btn" onclick="toggleAdminModal()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-2 rounded-lg border border-slate-700 transition flex items-center gap-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto">
+               <i class="fa-solid fa-lock" id="admin-icon"></i> <span id="admin-btn-text">Área Admin</span>
+             </button>
+           </div>
         </div>
     </header>
 
