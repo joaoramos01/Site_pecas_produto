@@ -13,7 +13,7 @@ const defaultCars = [
                 id: 101,
                 name: "Aerofolio Modelo ABS Lancer Evolution",
                 image: "https://http2.mlstatic.com/D_NQ_NP_2X_835008-MLB90116600571_082025-F-aerofolio-modelo-plastico-abs-lancer-evo-evolution-2012-2013.webp",
-                installedImage: "https://github.com/joaoramos01/Site_pecas_produto/blob/main/img/868024647_1756648128963603_8772046065326052413_n.jpg",
+                installedImage: "https://github.com/joaoramos01/Site_pecas_produto/blob/main/img/868024647_1756648128963603_8772046065326052413_n.jpg?raw=true",
                 storeName: "Mercado Livre",
                 storeLink: "https://produto.mercadolivre.com.br/MLB-4034198895-aerofolio-modelo-plastico-abs-lancer-evo-evolution-2012-2013-_JM?sid=purchases",
                 notes: "Produto entregue em perfeitas condições. Furações exatas e material de ótima qualidade."
