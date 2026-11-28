@@ -6,7 +6,7 @@ let selectedBrand = "all";
 const defaultCars = [
     {
         id: 1,
-        name: "Mitsubishi Lancer HL-T",
+        name: "Mitsubishi Lancer",
         brand: "Mitsubishi",
         image: "https://s2-autoesporte.glbimg.com/dtyZfFVYzvNjHzaWSBfJHwIUnfU=/0x0:620x400/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/Y/X/SddH1hSrCrViJMPAjRrw/2015-01-02-mitsu-10-940x532.jpg",
         year: "2019 2.0 / Motor 4B11",
