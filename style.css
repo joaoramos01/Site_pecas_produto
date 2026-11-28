@@ -1,16 +1,25 @@
 /* Transições suaves e ajustes visuais para hover e overlay */
 .car-card {
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.car-card:hover .car-overlay {
-    opacity: 1;
+.car-card:hover {
+    border-color: rgba(239, 68, 68, 0.5); /* Destaque sutil na borda */
 }
 
 .car-overlay {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
-    background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.4) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(2, 6, 23, 0.92) 0%, rgba(2, 6, 23, 0.45) 55%, transparent 100%);
+}
+
+@media (min-width: 640px) {
+    .car-overlay {
+        opacity: 0;
+    }
+    .car-card:hover .car-overlay {
+        opacity: 1;
+    }
 }
 
 /* Suavizar rolagem */
