@@ -55,7 +55,7 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
 
         <!-- SEÇÃO 1: CARROS & PEÇAS -->
-        <div id="section-cars" class="space-y-12">
+        <div id="section-cars" class="space-y-8">
             <!-- Cabeçalho da Seção -->
             <div class="flex flex-wrap justify-between items-center gap-4">
                 <div>
@@ -65,6 +65,11 @@
                 <button onclick="openCarModal()" class="admin-only hidden bg-red-500 hover:bg-red-400 text-slate-950 font-semibold px-4 py-2 rounded-xl text-sm transition flex items-center gap-2">
                     <i class="fa-solid fa-plus"></i> Novo Carro
                 </button>
+            </div>
+
+            <!-- Barra de Filtro por Marca -->
+            <div id="brand-filter-bar" class="flex flex-wrap gap-2">
+                <!-- Preenchido via JS -->
             </div>
 
             <!-- Grade de Carros (Cards Clicáveis com Hover) -->
@@ -143,6 +148,10 @@
                 <div>
                     <label class="block text-xs text-slate-400 mb-1">Nome / Modelo do Carro</label>
                     <input type="text" id="car-name" placeholder="Ex: Honda Civic Si" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-400 mb-1">Marca (Opcional)</label>
+                    <input type="text" id="car-brand" placeholder="Ex: Mitsubishi, Nissan, Honda" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
                 </div>
                 <div>
                     <label class="block text-xs text-slate-400 mb-1">Link da Foto (URL)</label>

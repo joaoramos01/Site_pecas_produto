@@ -1,11 +1,13 @@
 // Estado da Aplicação
 let isAdmin = false;
 let selectedCarId = null;
+let selectedBrand = "all";
 
 const defaultCars = [
     {
         id: 1,
-        name: "Lancer HL-T",
+        name: "Mitsubishi Lancer HL-T",
+        brand: "Mitsubishi",
         image: "https://s2-autoesporte.glbimg.com/dtyZfFVYzvNjHzaWSBfJHwIUnfU=/0x0:620x400/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/Y/X/SddH1hSrCrViJMPAjRrw/2015-01-02-mitsu-10-940x532.jpg",
         year: "2019 2.0 / Motor 4B11",
         parts: [
@@ -76,7 +78,8 @@ const defaultCars = [
     },
     {
         id: 2,
-        name: "Versa Executive",
+        name: "Nissan Versa Executive",
+        brand: "Nissan",
         image: "https://www.webmotors.com.br/imagens/prod/348528/NISSAN_VERSA_1.6_16V_FLEX_SENSE_XTRONIC_34852810460372372.webp",
         year: "2022 / 1.6 16V Flex (HR16DE)",
         parts: [
@@ -170,6 +173,7 @@ let cleaningData = JSON.parse(localStorage.getItem("my_garage_cleaning")) || def
 
 // Inicialização
 document.addEventListener("DOMContentLoaded", () => {
+    renderBrandFilters();
     renderCars();
     renderCleaningProducts();
 
@@ -180,6 +184,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Obter marca do carro (campo brand ou primeira palavra do nome)
+function getCarBrand(car) {
+    if (car.brand && car.brand.trim()) return car.brand.trim();
+    return car.name.trim().split(/\s+/)[0];
+}
+
+// Renderizar barra de filtros por marca
+function renderBrandFilters() {
+    const bar = document.getElementById("brand-filter-bar");
+    if (!bar) return;
+
+    const brands = ["all", ...new Set(carsData.map(getCarBrand))];
+    if (brands.length <= 2) {
+        bar.innerHTML = "";
+        return;
+    }
+
+    bar.innerHTML = brands.map(brand => {
+        const active = selectedBrand === brand;
+        const label = brand === "all" ? "Todas as marcas" : brand;
+        const safeBrand = brand.replace(/'/g, "\\'");
+        return `
+            <button
+                type="button"
+                onclick="selectBrand('${safeBrand}')"
+                class="px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border ${
+                    active
+                        ? "bg-red-500 text-slate-950 border-red-500"
+                        : "bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700 hover:text-white"
+                }">
+                ${label}
+            </button>
+        `;
+    }).join("");
+}
+
+function selectBrand(brand) {
+    selectedBrand = brand;
+    renderBrandFilters();
+    renderCars();
+}
 
 // Alternar Abas
 function switchTab(tab) {
@@ -206,12 +252,16 @@ function renderCars() {
     const grid = document.getElementById("cars-grid");
     grid.innerHTML = "";
 
-    if (carsData.length === 0) {
-        grid.innerHTML = `<p class="text-slate-500 text-sm col-span-full">Nenhum carro cadastrado ainda.</p>`;
+    const filteredCars = selectedBrand === "all"
+        ? carsData
+        : carsData.filter(car => getCarBrand(car) === selectedBrand);
+
+    if (filteredCars.length === 0) {
+        grid.innerHTML = `<p class="text-slate-500 text-sm col-span-full">Nenhum carro cadastrado para esta marca ainda.</p>`;
         return;
     }
 
-    carsData.forEach(car => {
+    filteredCars.forEach(car => {
         const card = document.createElement("div");
         card.className = "car-card relative group rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 cursor-pointer shadow-lg";
         card.onclick = () => selectCarAndScroll(car.id);
@@ -413,6 +463,7 @@ function updateAdminUI() {
         btnText.innerText = "Área Admin";
         adminBtn.classList.add("opacity-0", "pointer-events-none");
     }
+    renderBrandFilters();
     renderCars();
     if (selectedCarId) selectCar(selectedCarId);
     renderCleaningProducts();
@@ -426,6 +477,8 @@ function openCarModal() {
 function closeCarModal() {
     document.getElementById("car-modal").classList.add("hidden");
     document.getElementById("car-name").value = "";
+    const brandInput = document.getElementById("car-brand");
+    if (brandInput) brandInput.value = "";
     document.getElementById("car-image").value = "";
     document.getElementById("car-year").value = "";
 }
@@ -460,6 +513,8 @@ function closeCleaningModal() {
 // Salvar / Deletar dados
 function saveCar() {
     const name = document.getElementById("car-name").value.trim();
+    const brandInput = document.getElementById("car-brand");
+    const brand = brandInput ? brandInput.value.trim() : "";
     const image = document.getElementById("car-image").value.trim();
     const year = document.getElementById("car-year").value.trim();
 
@@ -468,10 +523,11 @@ function saveCar() {
         return;
     }
 
-    const newCar = { id: Date.now(), name, image, year, parts: [] };
+    const newCar = { id: Date.now(), name, brand, image, year, parts: [] };
     carsData.push(newCar);
     localStorage.setItem("my_garage_cars", JSON.stringify(carsData));
     closeCarModal();
+    renderBrandFilters();
     renderCars();
     selectCarAndScroll(newCar.id);
 }
@@ -479,7 +535,11 @@ function saveCar() {
 function deleteCar(id) {
     if (confirm("Deseja realmente excluir este carro e suas peças?")) {
         carsData = carsData.filter(c => c.id !== id);
+        if (selectedBrand !== "all" && !carsData.some(c => getCarBrand(c) === selectedBrand)) {
+            selectedBrand = "all";
+        }
         localStorage.setItem("my_garage_cars", JSON.stringify(carsData));
+        renderBrandFilters();
         renderCars();
         if (carsData.length > 0) {
             selectCar(carsData[0].id);
